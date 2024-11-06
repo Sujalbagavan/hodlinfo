@@ -1,0 +1,78 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HODLINFO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">HODLINFO</div>
+        <div class="header-right">
+            <select>
+                <option>INR</option>
+            </select>
+            <select>
+                <option>BTC</option>
+            </select>
+            <button class="connect-btn">Connect Telegram</button>
+        </div>
+    </header>
+
+    <div class="stats-container">
+        <div class="stat-box">
+            <div class="stat-value">0.1 %</div>
+            <div class="stat-label">5 Mins</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value">0.96 %</div>
+            <div class="stat-label">1 Hour</div>
+        </div>
+        <div class="best-price-box">
+            <div class="best-price-label">Best Price to Trade</div>
+            <div class="best-price-value">
+                <span class="currency-symbol">₹</span>
+                <span id="best-price">26,56,110</span>
+            </div>
+            <div class="best-price-subtitle">Average BTC/INR net price including commission</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value">2.73 %</div>
+            <div class="stat-label">1 Day</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value">7.51 %</div>
+            <div class="stat-label">7 Days</div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Platform</th>
+                <th>Last Traded Price</th>
+                <th>Buy / Sell Price</th>
+                <th>Difference</th>
+                <th>Savings</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% Object.keys(tickers).forEach((key, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= tickers[key].name %></td>
+                    <td>₹ <%= tickers[key].last %></td>
+                    <td>₹ <%= tickers[key].buy %> / ₹ <%= tickers[key].sell %></td>
+                    <td class="<%= tickers[key].low < 0 ? 'negative' : 'positive' %>"><%= tickers[key].low %></td>
+                    <td class="<%= tickers[key].volume < 0 ? 'negative' : 'positive' %>">₹ <%= tickers[key].volume %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <button class="add-button">Add HODLINFO to home screen</button>
+</body>
+</html>

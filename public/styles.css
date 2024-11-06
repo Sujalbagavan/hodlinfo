@@ -1,0 +1,196 @@
+/* public/styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #191d28;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px; /* Adjusted padding for smaller screens */
+    border-bottom: 1px solid #2e3241;
+}
+
+.logo {
+    color: #3dc6c1;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reduced gap for smaller screens */
+}
+
+.connect-btn {
+    background-color: #3dc6c1;
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Adjusted padding for smaller buttons */
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%; /* Adjusted padding for smaller screens */
+    margin-top: 20px;
+    gap: 20px; /* Reduced gap for smaller screens */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.stat-box {
+    text-align: center;
+    flex: 1;
+    min-width: 120px; /* Minimum width for stat boxes */
+    max-width: 200px; /* Maximum width for stat boxes */
+}
+
+.stat-value {
+    color: #3dc6c1;
+    font-size: 24px; /* Adjusted font size for better readability */
+    font-weight: bold;
+}
+
+.stat-label {
+    color: #888;
+    font-size: 12px; /* Adjusted font size for better readability */
+    margin-top: 5px;
+}
+
+.best-price-box {
+    text-align: center;
+    flex: 2;
+    padding: 0 20px; /* Reduced padding for mobile */
+}
+
+.best-price-label {
+    color: #888;
+    font-size: 14px; /* Adjusted font size for better readability */
+    margin-bottom: 10px;
+}
+
+.best-price-value {
+    font-size: 32px; /* Adjusted font size for better readability */
+    font-weight: bold;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.currency-symbol {
+    font-weight: normal;
+}
+
+.best-price-subtitle {
+    color: #888;
+    font-size: 12px; /* Adjusted font size for better readability */
+    margin-top: 10px;
+}
+
+table {
+    width: 100%; /* Full width for tables */
+    margin: 20px 0; /* Adjusted margin for better spacing */
+    border-collapse: collapse;
+}
+
+th {
+    color: #888;
+    padding: 10px; /* Adjusted padding for better spacing */
+    text-align: left;
+    border-bottom: 1px solid #2e3241;
+}
+
+td {
+    padding: 10px; /* Adjusted padding for better spacing */
+    border-bottom: 1px solid #2e3241;
+}
+
+.positive {
+    color: #3dc6c1;
+}
+
+.negative {
+    color: #f44336;
+}
+
+.add-button {
+    display: block;
+    width: 100%; /* Full width for buttons on mobile */
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #2e3241;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Added specific styles for price display */
+.price-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 5%;
+    }
+
+    .stat-box {
+        margin-bottom: 20px; /* Space between stat boxes */
+        width: 100%; /* Full width on mobile */
+    }
+
+    .best-price-box {
+        padding: 0 20px; /* Reduce padding on mobile */
+    }
+
+    table {
+        width: 100%; /* Full width for tables on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-value {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    .best-price-value {
+        font-size: 28px; /* Smaller font size for mobile */
+    }
+
+    .add-button {
+        width: 100%; /* Full width for buttons on mobile */
+    }
+}
